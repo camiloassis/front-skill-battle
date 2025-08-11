@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/variables' as variables;
+@use 'styles/mixins' as mixins;
+
+body {
+  // font-size: variables.$font-body-size;
+  // font-weight: variables.$font-body-weight;
+  color: variables.$gray-900;
+  background: #{variables.$color-background-gradient};
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    font-size: variables.$font-h1-size;
+    font-weight: variables.$font-h1-weight;
+    line-height: variables.$font-h1-line-height;
+    margin-bottom: variables.$spacing-md;
+    color: variables.$color-white;
+}
+
+
+.button-primary {
+  @include mixins.button-primary;
+}
+
+.button-secondary {
+  @include mixins.button-secondary;
+}
+
+.gradient-primary{
+  @include mixins.bg-gradient-primary;
+}
+
+.bg-blur{
+  @include mixins.bg-blur;
+}

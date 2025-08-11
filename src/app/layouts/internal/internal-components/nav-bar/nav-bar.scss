@@ -1,0 +1,21 @@
+@use '../../../../../styles/variables' as variables;
+
+.nav-container{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    .avatar{
+        display: flex;
+        gap: 16px;
+        h1{
+            font-size: 30px;
+            margin: 0;
+        }
+        .sub{
+            color: variables.$gray-300;
+            font-size: 16px;
+        }
+    }
+}

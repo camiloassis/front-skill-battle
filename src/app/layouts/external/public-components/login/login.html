@@ -1,0 +1,98 @@
+<section class="login">
+    <div class="content">
+        <div class="info">
+            <div class="title">
+                <div class="zap-container gradient-primary">
+                    <lucide-angular [img]="zap" [style.height]="'32px'" size="32"></lucide-angular>
+                </div>
+                <span>SkillBattle</span>
+            </div>
+
+            <div class="information">
+                <h1>Batalhe em <span class="highlight">Quizzes</span> em Tempo Real</h1>
+                <p>
+                    Crie quizzes, desafie amigos e prove quem é o mais inteligente em
+                    batalhas épicas de conhecimento!
+                </p>
+                <div class="footer-grid">
+                    <div class="grid-item">
+                        <lucide-angular color="orange" [img]="trophy" [style.height]="'24px'" size="24"></lucide-angular>
+                        <span>Rankings em Tempo Real</span>
+                    </div>
+                    <div class="grid-item">
+                        <lucide-angular color="blue" [img]="users" [style.height]="'24px'" size="24">
+                        </lucide-angular>
+                        <span>Até 4 Jogadores
+                        </span>
+
+                    </div>
+                    <div class="grid-item">
+                        <lucide-angular color="green" [img]="clock" [style.height]="'24px'" size="24"></lucide-angular>
+                        <span>Partidas Rápidas</span>
+
+                    </div>
+                    <div class="grid-item">
+                        <lucide-angular color="pink" [img]="zap" [style.height]="'24px'" size="24"></lucide-angular>
+                        <span>Quizzes Personalizados</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-container bg-blur">
+            <h2>Entrar na Batalha</h2>
+            <span>Faça login ou crie sua conta para começar</span>
+            <div class="toggle-container">
+                <button 
+                class="toggle-btn" 
+                [class.active]="formType === 'login'" 
+                (click)="formType = 'login'">
+                Login
+                </button>
+                <button 
+                class="toggle-btn" 
+                [class.active]="formType === 'register'" 
+                (click)="formType = 'register'">
+                Cadastro
+                </button>
+                <div class="slider" [class.right]="formType === 'register'"></div>
+            </div>
+            @if (formType  === 'login') {
+                 <form >
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" placeholder="digite seu email..." />
+                </div>
+                <div class="input-container">
+                    <label for="passowrd">Senha </label>
+                    <input id="passowrd" type="password" placeholder="digite sua senha..." />
+                </div>
+                
+                <app-button height="38px" width="100%">ENTRAR</app-button>
+
+            </form>
+            }@else {
+                 <form >
+                <div class="input-container">
+                    <label for="name">Nome completo</label>
+                    <input id="name" type="text" placeholder="digite seu nome completo..." />
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" placeholder="digite seu email..." />
+                </div>
+
+                <div class="input-container">
+                    <label for="passowrd">Senha </label>
+                    <input id="passowrd" type="password" placeholder="digite sua senha..." />
+                </div>
+                
+                <app-button height="38px" width="100%">CADASTRAR</app-button>
+
+            </form>
+            }
+           
+
+        </div>
+    </div>
+</section>

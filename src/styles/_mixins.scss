@@ -1,0 +1,59 @@
+@use 'variables' as variables;
+
+@mixin gradient-primary {
+  background: variables.$color-primary-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@mixin bg-gradient-primary {
+  background: variables.$color-primary-gradient;
+}
+
+
+@mixin button-base {
+  padding: variables.$spacing-sm variables.$spacing-md;
+  border-radius: 4px;
+  font-weight: variables.$font-h3-weight;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: variables.$color-primary-gradient;
+  color: variables.$color-white;
+  border: none;
+  background-size: 200% 100%;
+  background-position: left;
+  transition: background-position 0.3s ease;
+
+  &:hover {
+    background-position: right;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background: variables.$color-secondary-gradient;
+  color: variables.$color-white;
+  border: none;
+  background-size: 200% 100%;
+  background-position: left;
+  transition: background-position 0.3s ease;
+
+  &:hover {
+    background: variables.$color-secondary-to;
+  }
+}
+
+@mixin bg-blur {
+    background: rgba(255, 255, 255, 0.123); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.192);
+}
