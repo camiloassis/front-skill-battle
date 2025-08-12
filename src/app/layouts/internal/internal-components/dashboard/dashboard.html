@@ -1,7 +1,21 @@
 <section class="dashboard">
     <div>
-        @for (item of resumeCards(); track $index) {
+        <!-- @for (item of resumeCards() | async; track $index) {
 
+        } -->
+        <div class="cards-container">
+            @for (item of mock; track $index) {
+            <div class="bg-blur card-resume">
+                <div [style.backgroundColor]="item.bgColor" class="icon-container">
+                    <lucide-angular [img]="item.icon" style="height: 24px; display: block;" [color]="item.color"></lucide-angular>
+                </div>
+                <div>
+                    <span>{{item.label}}</span>
+                    <h2>{{item.value}}</h2>   
+                </div>
+            </div>
         }
+        </div>
+        
     </div>
 </section>
