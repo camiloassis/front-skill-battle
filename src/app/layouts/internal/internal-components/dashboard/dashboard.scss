@@ -1,8 +1,13 @@
-.dashboard{
-    height: calc(100vh - 89px);
-    padding: 0 15%;
+.dashboard {
 
-    .cards-container{
+  .dash-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  .cards-container{
         display: flex;
         gap: 16px;
         width: 100%;
@@ -28,5 +33,20 @@
         }
     }
     }
-    
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+
+    .rooms, .quizzes {
+        min-height: 600px; 
+    }
+
+    .history {
+        grid-column: span 2 / span 2;
+        min-height: 450px;
+    }
+    }
 }

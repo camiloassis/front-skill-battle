@@ -1,14 +1,16 @@
 <nav class="nav-container">
     <div class="avatar">
-        <div>avatar</div>
+        <div class="zap-container gradient-primary">
+            <lucide-angular [img]="zap" [style.height]="'32px'" size="32"></lucide-angular>
+        </div>
         <div>
             <h1>SkillBattle</h1>
-            <span class="sub">Bem-vindo de volta user</span>
+            <span class="sub">Bem-vindo de volta {{user?.name || 'user'}}</span>
         </div>
     </div>
 
     <div class="options">
-        <lucide-angular [img]="setting"></lucide-angular>
-        <lucide-angular [img]="logout"></lucide-angular>
+        <lucide-angular style="cursor: pointer;" (click)="openSettings()" [img]="setting"></lucide-angular>
+        <lucide-angular style="cursor: pointer;" (click)="handleLogout()" [img]="logout"></lucide-angular>
     </div>
 </nav>

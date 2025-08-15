@@ -58,36 +58,41 @@
                 <div class="slider" [class.right]="formType === 'register'"></div>
             </div>
             @if (formType  === 'login') {
-                 <form >
-                <div class="input-container">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" placeholder="digite seu email..." />
-                </div>
-                <div class="input-container">
-                    <label for="passowrd">Senha </label>
-                    <input id="passowrd" type="password" placeholder="digite sua senha..." />
-                </div>
+                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit(true)" >
+                    <div class="input-container">
+                        <label for="email">Email</label>
+                        <input formControlName="email" id="email" type="text" placeholder="digite seu email..." />
+                    </div>
+                    <div class="input-container">
+                        <label for="password">Senha </label>
+                        <input formControlName="password" id="password" type="password" placeholder="digite sua senha..." />
+                    </div>
                 
-                <app-button height="38px" width="100%">ENTRAR</app-button>
+                <app-button height="38px" width="100%" type="submit">ENTRAR</app-button>
 
             </form>
             }@else {
-                 <form >
-                <div class="input-container">
-                    <label for="name">Nome completo</label>
-                    <input id="name" type="text" placeholder="digite seu nome completo..." />
-                </div>
-                <div class="input-container">
-                    <label for="email">Email</label>
-                    <input id="email" type="text" placeholder="digite seu email..." />
-                </div>
+                 <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                    <div class="input-container">
+                        <label for="name">Nome completo</label>
+                        <input formControlName="name" id="name" type="text" placeholder="digite seu nome completo..." />
+                    </div>
+                    <div class="input-container">
+                        <label for="email">Email</label>
+                        <input formControlName="email" id="email" type="text" placeholder="digite seu email..." />
+                    </div>
 
-                <div class="input-container">
-                    <label for="passowrd">Senha </label>
-                    <input id="passowrd" type="password" placeholder="digite sua senha..." />
-                </div>
-                
-                <app-button height="38px" width="100%">CADASTRAR</app-button>
+                    <div class="input-container">
+                        <label for="password">Senha </label>
+                        <input formControlName="password" id="password" type="password" placeholder="digite sua senha..." />
+                    </div>
+
+                    <div class="input-container">
+                        <label for="passowrd">Confirme a senha </label>
+                        <input id="passowrd" type="password" placeholder="confirme sua senha..." />
+                    </div>
+                    
+                    <app-button height="38px" width="100%" type="submit">CADASTRAR</app-button>
 
             </form>
             }

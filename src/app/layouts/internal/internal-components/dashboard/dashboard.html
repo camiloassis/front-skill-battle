@@ -1,20 +1,47 @@
 <section class="dashboard">
-    <div>
-        <!-- @for (item of resumeCards() | async; track $index) {
-
-        } -->
+    <div class="dash-wrap">
         <div class="cards-container">
-            @for (item of mock; track $index) {
+            @for (item of this.resumeCards$ | async; track $index) {
             <div class="bg-blur card-resume">
                 <div [style.backgroundColor]="item.bgColor" class="icon-container">
-                    <lucide-angular [img]="item.icon" style="height: 24px; display: block;" [color]="item.color"></lucide-angular>
+                    <lucide-angular [img]="item.icon" style="height: 24px; display: block;"
+                        [color]="item.color"></lucide-angular>
                 </div>
                 <div>
                     <span>{{item.label}}</span>
-                    <h2>{{item.value}}</h2>   
+                    <h2>{{item.value}}</h2>
                 </div>
             </div>
-        }
+            }
+        
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="rooms bg-blur">
+                <div class="title">
+                    <h1>Batalhar Agora</h1>
+                    <span>Crie uma nova sala ou entre em uma existente</span>
+                </div>
+
+                <app-button width="100%">Criar Nova Sala</app-button>
+
+                <span>ou</span>
+
+                <div class="sarch-room">
+
+                </div>
+
+
+                <div class="rooms-list">
+
+                </div>
+
+                
+
+            </div>
+            <div class="quizzes bg-blur "></div>
+            <div class="history bg-blur "></div>
+
         </div>
         
     </div>

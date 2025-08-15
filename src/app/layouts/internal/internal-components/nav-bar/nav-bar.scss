@@ -1,7 +1,7 @@
 @use '../../../../../styles/variables' as variables;
 
 .nav-container{
-    padding: 16px 15%;
+    padding: 16px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,6 +9,18 @@
     .avatar{
         display: flex;
         gap: 16px;
+        align-items: center;
+
+        .zap-container {
+            padding: 8px;
+            color: white;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
         h1{
             font-size: 30px;
             margin: 0;
@@ -17,5 +29,11 @@
             color: variables.$gray-300;
             font-size: 16px;
         }
+    }
+
+    .options{
+        display: flex;
+        align-items: center;
+        gap: 16px;
     }
 }
